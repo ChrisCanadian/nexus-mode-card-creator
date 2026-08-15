@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mode Card",
+  "description": "Portable behavioral configuration produced by Mode Card Creator.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "description",
+    "role",
+    "instructions",
+    "communication_style",
+    "boundaries",
+    "conversation_starters"
+  ],
+  "properties": {
+    "name": {"type": "string", "minLength": 1, "maxLength": 80},
+    "description": {"type": "string", "minLength": 1, "maxLength": 500},
+    "role": {"type": "string", "minLength": 1, "maxLength": 500},
+    "instructions": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 12,
+      "items": {"type": "string", "minLength": 1, "maxLength": 600}
+    },
+    "communication_style": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "items": {"type": "string", "minLength": 1, "maxLength": 200}
+    },
+    "boundaries": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "items": {"type": "string", "minLength": 1, "maxLength": 300}
+    },
+    "conversation_starters": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 6,
+      "items": {"type": "string", "minLength": 1, "maxLength": 300}
+    }
+  }
+}
