@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mode-card-creator"
+version = "0.1.2"
+description = "A bounded, model-agnostic Nexus Synapse public artifact for creating portable AI behavioral Mode Cards."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Christopher Campbell"}]
+dependencies = []
+
+[project.scripts]
+mode-card-create = "mode_card_creator.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.urls]
+Homepage = "https://github.com/ChrisCanadian/nexus-mode-card-creator"
+Repository = "https://github.com/ChrisCanadian/nexus-mode-card-creator"
