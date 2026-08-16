@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.env.*
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+
+# User-generated content
+mode_card_handoff.md
+mode_card.json
+mode_card.md
+mode_card_output.*
