@@ -63,7 +63,6 @@ Environment variables are deliberately generic so the project is not tied to a s
 
 > **Credential note:** the configured API credential is sent to the configured API base URL. Only use an endpoint/provider you trust. Never commit credentials to this repository.
 
-
 ## Host capabilities
 
 The AI-native creator does **not** require tools, browsing, memory, or citation support.
@@ -202,9 +201,13 @@ This is **qualitative interoperability feedback, not automated conformance evide
 
 ## Tests
 
+The unit suite runs directly from a fresh checkout on Windows, macOS, or Linux:
+
 ```bash
-PYTHONPATH=src python -m unittest discover -s tests -v
+python -m unittest discover -s tests -v
 ```
+
+The tests add the repository's `src/` directory to their import path explicitly, so no shell-specific `PYTHONPATH` setup is required.
 
 ## License
 
