@@ -2,7 +2,13 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+import sys
 from unittest.mock import patch
+
+ROOT = Path(__file__).resolve().parents[1]
+SRC = ROOT / "src"
+if str(SRC) not in sys.path:
+    sys.path.insert(0, str(SRC))
 
 from mode_card_creator.card import ModeCard
 from mode_card_creator.cli import confirm_generated_card, main
@@ -42,7 +48,6 @@ class CliTests(unittest.TestCase):
             text = output.read_text(encoding="utf-8")
             self.assertIn("Mode Card Creator", text)
             self.assertIn("HOST-AUTHORITY BASELINE", text)
-
 
     def test_call_model_does_not_save_without_confirmation(self):
         with tempfile.TemporaryDirectory() as tmp:
