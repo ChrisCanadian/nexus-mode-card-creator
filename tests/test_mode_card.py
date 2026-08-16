@@ -2,12 +2,16 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+SRC = ROOT / "src"
+if str(SRC) not in sys.path:
+    sys.path.insert(0, str(SRC))
 
 from mode_card_creator.card import CONSTRAINTS, PUBLIC_FIELDS, ModeCard, ValidationError, parse_mode_card_json
 from mode_card_creator.interview import InterviewAnswer
 from mode_card_creator.prompting import build_synthesis_prompt
-
-ROOT = Path(__file__).resolve().parents[1]
 
 
 def valid_payload():
