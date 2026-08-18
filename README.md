@@ -209,6 +209,10 @@ python -m unittest discover -s tests -v
 
 The tests add the repository's `src/` directory to their import path explicitly, so no shell-specific `PYTHONPATH` setup is required.
 
+## Attribution and provenance
+
+See [`ATTRIBUTION.md`](ATTRIBUTION.md) for authorship, the behavioral-authoring lineage, AI-assistance boundaries, and permission scope.
+
 ## License
 
 Released under the **MIT License**. Copyright © 2026 Christopher Campbell.
